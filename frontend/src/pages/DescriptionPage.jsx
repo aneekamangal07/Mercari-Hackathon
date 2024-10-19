@@ -43,23 +43,23 @@ const DescriptionPage = () => {
             Item Details
           </div>
           <div className="flex">
-            <div className="font-semibold w-1/2">Category :</div>
+            <div className="font-semibold w-1/3">Category :</div>
             <div>Clothing</div>
           </div>
           <div className="flex">
-            <div className="font-semibold w-1/2">Brand :</div>
+            <div className="font-semibold w-1/3">Brand :</div>
             <div>Snidel</div>
           </div>
           <div className="flex">
-            <div className="font-semibold w-1/2">Size :</div>
+            <div className="font-semibold w-1/3">Size :</div>
             <div>M</div>
           </div>
           <div className="flex">
-            <div className="font-semibold w-1/2">Deals :</div>
+            <div className="font-semibold w-1/3">Deals :</div>
             <div>Offers applied</div>
           </div>
           <div className="flex">
-            <div className="font-semibold w-1/2">Color :</div>
+            <div className="font-semibold w-1/3">Color :</div>
             <div>White</div>
           </div>
         </div>

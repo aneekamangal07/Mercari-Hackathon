@@ -7,10 +7,10 @@ const WomenPage = () => {
   const navigate = useNavigate();
   return (
     <div className="w-[100%]">
-      <div className="flex h-[88vh] text-black font-bold items-center justify-center">
+      <div className="flex h-[88vh] text-black font-bold items-center justify-center text-2xl opacity-2">
         <div
-          className="w-1/3 flex h-[80vh] justify-center items-center hover:scale-110"
-          onClick={() => navigate('/women')}
+          className="w-1/3 flex h-[80vh] justify-center items-start pt-[230px] hover:scale-110 pr-[20px]"
+          onClick={() => navigate('/women-fashion')}
           style={{
             backgroundImage: `url(${Women})`,
             backgroundSize: 'cover',
@@ -20,8 +20,8 @@ const WomenPage = () => {
           Fashion
         </div>
         <div
-          className="w-1/3 flex h-[80vh] justify-center items-center hover:scale-110"
-          onClick={() => navigate('/28')}
+          className="w-1/3 flex h-[80vh] justify-end items-start hover:scale-110 px-4 py-10"
+          onClick={() => navigate('/women-mood')}
           style={{
             backgroundImage: `url(${Mood})`,
             backgroundSize: 'cover',

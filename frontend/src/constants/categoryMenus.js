@@ -19,11 +19,11 @@ export const categoryMenus = [
   },
   {
     link: '/',
-    label: 'Men’s',
+    label: 'Men',
   },
   {
-    link: '/womens',
-    label: 'Women’s',
+    link: '/women-style',
+    label: 'Women',
   },
   {
     link: '/',

@@ -8,12 +8,15 @@ export const PageFooter = () => {
     <footer className="bg-neutral-100">
       <div className="py-10">
         <div className="space-y-8 px-5 lg:hidden">
-          <FooterMenusSP heading="About Caricari" menus={aboutMenus} />
+          <FooterMenusSP heading="About Mercari" menus={aboutMenus} />
           <FooterMenusSP heading="Help" menus={helpMenus} />
-          <FooterMenusSP heading="Privacy and Terms of Use" menus={termsMenus} />
+          <FooterMenusSP
+            heading="Privacy and Terms of Use"
+            menus={termsMenus}
+          />
         </div>
         <div className="hidden gap-5 px-10 lg:flex">
-          <FooterMenus heading="About Caricari" menus={aboutMenus} />
+          <FooterMenus heading="About Mercari" menus={aboutMenus} />
           <FooterMenus heading="Help" menus={helpMenus} />
           <FooterMenus heading="Privacy and Terms of Use" menus={termsMenus} />
         </div>
@@ -29,7 +32,7 @@ export const PageFooter = () => {
             </a>
           </div>
           <span className="text-xs text-secondary-text">
-            &copy; Caricari, Inc.
+            &copy; Mercari, Inc.
           </span>
         </div>
       </div>

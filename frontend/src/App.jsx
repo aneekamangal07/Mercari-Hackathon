@@ -29,7 +29,7 @@ export default function App() {
             }
           />
           <Route
-            path="/women"
+            path="/women-fashion"
             element={
               <>
                 <div className="sticky top-0 z-10 bg-white">
@@ -40,7 +40,7 @@ export default function App() {
             }
           />
           <Route
-            path="/womens"
+            path="/women-style"
             element={
               <>
                 <div className="sticky top-0 z-10 bg-white">
