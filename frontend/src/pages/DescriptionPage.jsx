@@ -2,10 +2,93 @@ import { Heart } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { MdSaveAlt } from 'react-icons/md';
 import { useParams } from 'react-router-dom';
+import { useSpeechRecognition } from '../../react-speech-kit/src';
+import { useSpeechSynthesis } from '../../react-speech-kit/src';
+import axios from 'axios';
 
 const DescriptionPage = () => {
   const { id } = useParams();
   const [info, setInfo] = useState(null);
+  const [transcript, setTranscript] = useState('');
+  const [listening, setListening] = useState(false);
+  const [text, setText] = useState('');
+  const [videoPlaying, setVideoPlaying] = useState(false);
+  const [avatarSize, setAvatarSize] = useState(12);
+
+  const onEnd = () => {
+    setVideoPlaying(false);
+    setAvatarSize(12);
+  }
+
+  const { speak, voices, speaking } = useSpeechSynthesis({ onEnd });
+
+
+  const onResult = (result) => {
+    setTranscript(prev => `${prev} ${result}`);
+  };
+
+  const { listen, stop } = useSpeechRecognition({ onResult });
+  const videoSrc = '/avataar.webm';
+
+  const toggleListening = () => {
+    if (listening) {
+      stop();
+      sendTranscriptToBackend();
+      setListening(false);
+      setAvatarSize(16);
+    } else {
+      listen({ interimResults: false });
+      setTranscript('');
+      setListening(true);
+      setAvatarSize(16);
+    }
+  };
+
+  const sendTranscriptToBackend = async () => {
+    try {
+      console.log(transcript);
+      const productdetails = {
+        "name": info.name,
+        "description": info.description,
+        "category": info.category,
+        "brand": info.brand,
+        "size": info.size,
+        "color": info.color,
+        "deals": info.deals,
+        "price": info.price,
+        "query": transcript
+      }
+      console.log(productdetails);
+      const response = await axios.post('http://127.0.0.1:8000/product-query', productdetails );
+      console.log(response.data);
+      setText(response.data.answer);
+    } catch (error) {
+      console.error('Error sending transcript:', error);
+    }
+  };
+
+  useEffect(() => {
+    const selectedVoice = voices.find((v) => v.voiceURI ==='Google UK English Female');
+    console.log(text, speaking);
+    if (text && speaking) {
+      setVideoPlaying(true); 
+      speak({ text: text, voice: selectedVoice, rate: 1 });
+    }
+  }, [text]);
+
+  useEffect(() => {
+    return () => {
+      window.speechSynthesis.cancel(); 
+    };
+  }, []);
+
+  useEffect(() => {
+    if (text && speaking) {
+      setVideoPlaying(true);
+    } else {
+      setVideoPlaying(false);
+    }
+  }, [text]);
 
   useEffect(() => {
     getData();
@@ -93,6 +176,15 @@ const DescriptionPage = () => {
             <div>{info.color || 'Unknown'}</div>
           </div>
         </div>
+      </div>
+      <div style={{ position: 'absolute', bottom: '-5px', left: '0' }}>
+          {videoPlaying ? (
+            <video loop autoPlay muted playsInline style={{ width: '45%', height: 'auto', opacity: 1, transition: 'opacity 2.5s ease-in-out' }}>
+              <source src={videoSrc} type="video/webm" />
+            </video>
+          ) : (
+            <img src='/avatar.png' alt="Background" style={{ width: `${avatarSize}%`, height: 'auto', opacity: videoPlaying ? 0 : 1, transition: 'opacity 2.5s ease-in-out' }} onClick={toggleListening}  />
+          )}
       </div>
     </div>
   );
