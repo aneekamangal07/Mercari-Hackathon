@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 const userRoutes = require("./routes/userRoutes");
-// const recommendationRoutes = require('./routes/recommendationRoutes');
+const productRoutes = require("./routes/productRoutes");
 
 const app = express();
 
@@ -12,6 +12,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/api/users", userRoutes);
-// app.use('/api/recommendations', recommendationRoutes);
+app.use("/api/products", productRoutes);
 
 module.exports = app;
