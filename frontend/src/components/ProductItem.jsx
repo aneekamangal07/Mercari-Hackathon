@@ -1,4 +1,4 @@
-// import { Heart } from 'lucide-react';
+import { Heart } from 'lucide-react';
 
 export const ProductItem = ({ product }) => {
   return (
@@ -13,25 +13,17 @@ export const ProductItem = ({ product }) => {
             &yen;{product.price.toLocaleString()}
           </p>
         </div>
-        {/* <button
+        <button
           type="button"
-          className={`invisible absolute bottom-2 right-2 flex items-center justify-center rounded-full bg-white p-2 lg:group-hover:visible ${
-            favoriteCodes.includes(product.code) ? 'lg:visible' : ''
-          }`}
+          className='invisible absolute bottom-2 right-2 flex items-center justify-center rounded-full bg-white p-2 lg:group-hover:visible'
           onClick={(e) => {
             e.preventDefault();
-
-            changeFavorite(product.code);
           }}
-        > */}
-        {/* <Heart
-            className={`size-[20px] ${
-              favoriteCodes.includes(product.code)
-                ? 'fill-red-500 stroke-0'
-                : 'stroke-2'
-            }`}
-          /> */}
-        {/* </button> */}
+        >
+        <Heart
+            className='size-[20px] stroke-2'
+          /> 
+        </button> 
       </div>
       <span className="hidden text-sm lg:line-clamp-2">{product.name}</span>
     </a>

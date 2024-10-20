@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        yeseva: ['"Yeseva One"', 'serif'],
+      },
       colors: {
         secondary: {
           hover: colors.gray[100],

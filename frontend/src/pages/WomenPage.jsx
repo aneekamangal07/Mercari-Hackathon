@@ -20,7 +20,7 @@ const WomenPage = () => {
           Fashion
         </div>
         <div
-          className="w-1/3 flex h-[80vh] justify-end items-start hover:scale-110 px-4 py-10"
+          className="w-1/3 flex h-[80vh] justify-end items-start hover:scale-110 px-6 py-10"
           onClick={() => navigate('/women-mood')}
           style={{
             backgroundImage: `url(${Mood})`,

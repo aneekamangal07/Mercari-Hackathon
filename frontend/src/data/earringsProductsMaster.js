@@ -1,23 +1,23 @@
 import { ProductsMaster } from '../types';
 
 export const earringsProductsMaster = {
-  keyword: 'Earrings',
+  keyword: 'Recommended For You',
   category: {
     id: 11,
-    name: 'Ladies > Earrings',
+    name: '',
   },
   products: [
     {
       code: 'm000000011',
       name: 'Charm Earrings',
       price: 8500,
-      imageUrl: '/src/assets/earrings001.jpg',
+      imageUrl: '/src/assets/earrings009.jpg',
     },
     {
       code: 'm000000012',
-      name: 'Long Earrings',
+      name: 'Sweat Shirt',
       price: 1800,
-      imageUrl: '/src/assets/earrings002.jpg',
+      imageUrl: '/src/assets/1.jpeg',
     },
     {
       code: 'm000000013',
@@ -33,9 +33,9 @@ export const earringsProductsMaster = {
     },
     {
       code: 'm000000015',
-      name: 'Motif Earrings',
+      name: 'Puffy Slippers',
       price: 4500,
-      imageUrl: '/src/assets/earrings005.jpg',
+      imageUrl: '/src/assets/2.jpeg',
     },
     {
       code: 'm000000016',
@@ -45,9 +45,9 @@ export const earringsProductsMaster = {
     },
     {
       code: 'm000000017',
-      name: 'Clip-on Earrings',
+      name: 'Cute Stuff Doll',
       price: 1530,
-      imageUrl: '/src/assets/earrings007.jpg',
+      imageUrl: '/src/assets/3.jpeg',
     },
     {
       code: 'm000000018',
@@ -57,9 +57,9 @@ export const earringsProductsMaster = {
     },
     {
       code: 'm000000019',
-      name: 'Charm Earrings',
-      price: 850,
-      imageUrl: '/src/assets/earrings009.jpg',
+      name: 'Tunic Top',
+      price: 8500,
+      imageUrl: '/src/assets/4.jpeg',
     },
     {
       code: 'm000000020',

@@ -10,6 +10,7 @@ import MomToBe from './pages/MomToBe';
 import DescriptionPage from './pages/DescriptionPage';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import StyleByMood from './pages/StyleByMood';
 
 export default function App() {
   return (
@@ -36,6 +37,17 @@ export default function App() {
                   <PageHeader />
                 </div>
                 <WomenSpecificPage />
+              </>
+            }
+          />
+          <Route
+            path="/women-mood"
+            element={
+              <>
+                <div className="sticky top-0 z-10 bg-white">
+                  <PageHeader />
+                </div>
+                <StyleByMood />
               </>
             }
           />

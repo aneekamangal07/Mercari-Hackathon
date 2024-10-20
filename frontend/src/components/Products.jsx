@@ -12,8 +12,6 @@ export const Products = ({ productsMaster }) => {
           >
             <ProductItem
               product={product}
-              // favoriteCodes={favoriteCodes}
-              // changeFavorite={changeFavorite}
             />
           </li>
         ))}
