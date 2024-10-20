@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Mood from '../assets/mood.avif';
+import Mood from '../assets/moodimage.jpeg';
 import ProductList from './ProductList';
 const StyleByMood = () => {
   const [info, setInfo] = useState();
