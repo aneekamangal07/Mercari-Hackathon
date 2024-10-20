@@ -2,8 +2,8 @@ import { Heart } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { MdSaveAlt } from 'react-icons/md';
 import { useParams } from 'react-router-dom';
-import { useSpeechRecognition } from '../../react-speech-kit/src';
-import { useSpeechSynthesis } from '../../react-speech-kit/src';
+import { useSpeechRecognition } from '../../react-speech/src';
+import { useSpeechSynthesis } from '../../react-speech/src';
 import axios from 'axios';
 
 const DescriptionPage = () => {
