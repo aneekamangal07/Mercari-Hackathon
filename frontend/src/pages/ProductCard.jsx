@@ -7,12 +7,12 @@ const ProductCard = (item) => {
   return (
     <div
       className="group flex h-full flex-col gap-2"
-      onClick={() => navigate(`/item/${details.id}`)}
+      onClick={() => navigate(`/item/${details._id}`)}
     >
       <div className="relative">
         <img
           src={details.image_url}
-          className="block aspect-square rounded-sm object-cover group-hover:opacity-60 w-80 h-80"
+          className="block aspect-square rounded-sm object-cover group-hover:opacity-60 w-60 h-60"
         />
         <div className="absolute bottom-2 left-0 rounded-r-full bg-[#0006] px-2 py-1 lg:bottom-2">
           <p className="text-sm font-bold text-white sm:text-lg">

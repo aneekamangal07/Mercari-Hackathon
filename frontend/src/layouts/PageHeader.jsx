@@ -1,9 +1,11 @@
 import { Bell, Check, Heart, Search, User } from 'lucide-react';
 import {useNavigate} from 'react-router-dom';
 import logo from '../assets/Mercari_logo.svg';
+import { useState } from 'react';
 
 export const PageHeader = () => {
   const navigate=useNavigate();
+  const loggedin=useState(false);
   return (
     <div className="relative mx-4 mb-6 flex items-center justify-between gap-6 pt-2">
       <div className="absolute inset-0 flex justify-center md:static">
@@ -35,13 +37,6 @@ export const PageHeader = () => {
         </button>
         <button
           type="button"
-          className="hidden gap-1 p-2 hover:bg-secondary-hover md:flex"
-        >
-          <User className="size-[22px] stroke-2" />
-          Taro
-        </button>
-        <button
-          type="button"
           className="hidden p-2 hover:bg-secondary-hover md:flex"
         >
           <Heart className="size-[22px] stroke-2" />
@@ -52,13 +47,19 @@ export const PageHeader = () => {
         >
           <Bell className="size-[22px] stroke-2" />
         </button>
-        <button
+        {loggedin ? <button
           onClick={()=>navigate('/login')}
           type="button"
           className="hidden rounded bg-red-500 px-4 py-2 text-sm font-bold text-white hover:bg-red-400 md:block"
         >
           Login
-        </button>
+        </button> :  <button
+          type="button"
+          className="hidden gap-1 p-2 hover:bg-secondary-hover md:flex"
+        >
+          <User className="size-[22px] stroke-2" />
+          Taro
+        </button>}
       </div>
     </div>
   );
